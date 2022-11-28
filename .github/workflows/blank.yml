@@ -32,6 +32,6 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-      curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
-      postman login --with-api-key PMAK-63850c833eaa4513bc416c94-d723b8925e18a221e0fc7d036bf0d1dc3f
-      postman collection run "postman/collections/Santa.json" -e "Env Santa.postman_environment.json"
+        curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
+        postman login --with-api-key PMAK-63850c833eaa4513bc416c94-d723b8925e18a221e0fc7d036bf0d1dc3f
+        postman collection run "postman/collections/Santa.json" -e "Env Santa.postman_environment.json"

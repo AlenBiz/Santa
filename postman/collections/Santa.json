@@ -10,7 +10,7 @@
 			"name": "Registration",
 			"item": [
 				{
-					"name": "Reg Reg",
+					"name": "Reg UnReg",
 					"event": [
 						{
 							"listen": "test",
@@ -62,7 +62,7 @@
 					"response": []
 				},
 				{
-					"name": "Reg Unreg",
+					"name": "Reg Reg",
 					"event": [
 						{
 							"listen": "test",
@@ -119,6 +119,52 @@
 		{
 			"name": "Test login, password",
 			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"id": "aa4680ca-3ad2-4765-a21d-655a3ad506a5"
+							}
+						}
+					],
+					"id": "c18ca780-5737-4682-a36a-a43abf3fb7e3",
+					"protocolProfileBehavior": {
+						"followAuthorizationHeader": true,
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"testbizyaev@gmail.com\",\r\n  \"password\": \"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
 				{
 					"name": "Sessoin",
 					"event": [
@@ -194,52 +240,6 @@
 							"path": [
 								"account",
 								"notifications"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Login",
-					"event": [
-						{
-							"listen": "test",
-							"script": {
-								"exec": [
-									"pm.test(\"Status code is 200\", function () {\r",
-									"    pm.response.to.have.status(200);\r",
-									"});\r",
-									""
-								],
-								"type": "text/javascript",
-								"id": "aa4680ca-3ad2-4765-a21d-655a3ad506a5"
-							}
-						}
-					],
-					"id": "c18ca780-5737-4682-a36a-a43abf3fb7e3",
-					"protocolProfileBehavior": {
-						"followAuthorizationHeader": true,
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n  \"email\": \"testbizyaev@gmail.com\",\r\n  \"password\": \"{{password}}\"\r\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{baseUrl}}/login",
-							"host": [
-								"{{baseUrl}}"
-							],
-							"path": [
-								"login"
 							]
 						}
 					},

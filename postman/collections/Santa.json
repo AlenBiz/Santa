@@ -1170,6 +1170,55 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "change password Copy 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"const reqData = JSON.parse(request.data)\r",
+									"console.log(request.data)\r",
+									"pm.environment.set(\"password\", reqData.password)"
+								],
+								"type": "text/javascript",
+								"id": "c8bfce28-d14b-4046-86af-fc1436639b6f"
+							}
+						}
+					],
+					"id": "3991ecb4-1639-434f-abf6-50c642a1ec2e",
+					"protocolProfileBehavior": {
+						"followAuthorizationHeader": true,
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"password\":\"rty123\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/account/password",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"account",
+								"password"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"id": "6bf86385-a988-431b-a8c5-79bb3da6ee1d"

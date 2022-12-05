@@ -34,4 +34,4 @@ jobs:
         run: |
           curl -o- "https://dl-cli.pstmn.io/install/linux64.sh" | sh
           postman login --with-api-key ${{secrets.API_KEY}}
-          postman collection run "postman/collections/Santa.json" -e "EnvSanta.postman_environment.json" -d "cover.csv" -d "limit.csv" -d "Change password.csv"
+          postman collection run "postman/collections/Santa.json" -e "EnvSan.postman_environment.json" -d "cover.csv" -d "limit.csv" -d "Change password.csv"
